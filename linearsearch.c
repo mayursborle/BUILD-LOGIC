@@ -28,7 +28,7 @@ void linear_search(int a[100],int n)
 	}
 	if(i<n)
 	{
-		printf("\nsearch successful:%d",i+1);
+		printf("\nsearch successful \n the element present present at %d position\n",i+1);
 	}
 	else
 	{
