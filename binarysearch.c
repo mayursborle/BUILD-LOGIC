@@ -5,11 +5,17 @@ int binarySearch(int arr[], int l, int r, int x)
     {
         int mid = l + (r - l) / 2;
         if (arr[mid] == x)
+        {
             return mid;
+        }
         else if (arr[mid] > x)
+        {
             return binarySearch(arr, l, mid - 1, x);
+        }
         else
+        {
             return binarySearch(arr, mid + 1, r, x);
+        }
     }
     return -1;
 }
@@ -18,20 +24,25 @@ int main(void)
 {
     int n, arr[20];
     int x;
-	printf("########## BINARY SEARCH #########\n");
-	printf(" how many elements you want \n");
-	scanf("%d",&n);
-	printf("enter the elements : \n");
-	for (int i = 0; i < n; i++)
-	{
-		scanf("%d",&arr[i]);
-	}
-	printf("enter the searching element :\n");
-	scanf("%d",&x);
-	
+    printf("########## BINARY SEARCH #########\n");
+    printf(" how many elements you want \n");
+    scanf("%d", &n);
+    printf("enter the elements : \n");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("enter the searching element :\n");
+    scanf("%d", &x);
+
     int result = binarySearch(arr, 0, n - 1, x);
-    (result == -1) ? printf("Element is not present in array")
-                   : printf("Element is present at index %d",
-                            result);
+    if (result == -1)
+    {
+        printf("Element is not present in array");
+    }
+    else
+    {
+        printf("Element is present at index %d", result);
+    }
     return 0;
 }
